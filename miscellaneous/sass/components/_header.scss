@@ -14,6 +14,7 @@
     display: flex;
     flex-direction: row;
     .logo {
+        text-decoration: none;
         display: block;
         margin: 14px 106px 14px 0;
         font: 900 24px/24px "Raleway Black";
@@ -56,12 +57,17 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    .username-text {
-        font: 400 14px/14px "Raleway Regular";
-        color: #ffffff;
-        margin: 0 7px 0 0;
-    }
-    .username-icon {
-        fill: #ffffff;
+    .username-link{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        .username-text {
+            font: 400 14px/14px "Raleway Regular";
+            color: #ffffff;
+            margin: 0 7px 0 0;
+        }
+        .username-icon {
+            fill: #ffffff;
+        }
     }
 }
