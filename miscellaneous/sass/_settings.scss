@@ -11,3 +11,21 @@ $color-red: #d13814;
 $color-green: #15aa2d;
 
 $background: #f9f9f9;
+
+// Миксин для добавления шрифтов
+
+@mixin addFontMixin($fontname, $fontstyle, $fontweight, $fontpath) {
+    @font-face {
+        font-family: $fontname;
+        font-style: $fontstyle;
+        font-weight: $fontweight;
+        src: local($fontname), url('#{$fontpath}.ttf');
+      }
+}
+
+// normalize
+
+.body {
+    margin: 0;
+    padding: 0;
+}
