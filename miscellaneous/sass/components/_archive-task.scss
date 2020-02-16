@@ -1,0 +1,38 @@
+$taskwidth: 554px;
+
+.archive-task {
+    width: $taskwidth;
+    position: relative;
+    background-color: #ffffff;
+    box-shadow: 0 0 16px 0 #e7e7e7;
+    padding: 15px;
+    box-sizing: border-box;
+    margin: 7px 0;
+}
+
+.archive-task-status {
+    margin: 17px 0 0 0;
+    .archive-task-status-text {
+        font: 400 14px/14px "Raleway Regular";
+    }
+    .archive-task-status-text-completed {
+        color: $color-green;
+    }
+    .archive-task-status-text-late {
+        color: $color-orange;
+    }
+    .archive-task-status-text-notcomplete {
+        color: $color-red;
+    }
+}
+
+.archive-task-bookmark {
+    position: absolute;
+    width: 28px;
+    height: 28px;
+    left: 532px;
+    top: -2px;
+    .archive-task-bookmark-svg {
+        fill: $color-green;
+    }
+}
