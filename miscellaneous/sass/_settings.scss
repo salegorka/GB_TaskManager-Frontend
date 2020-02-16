@@ -1,0 +1,31 @@
+// Размеры макета
+$width: 1170px;
+$margin: 15px;  
+
+// Цвета
+$color-blue: #4374b7;
+$color-blue-hover: #2d5b9a;
+
+$color-red: #d13814;
+
+$color-green: #15aa2d;
+
+$background: #f9f9f9;
+
+// Миксин для добавления шрифтов
+
+@mixin addFontMixin($fontname, $fontstyle, $fontweight, $fontpath) {
+    @font-face {
+        font-family: $fontname;
+        font-style: $fontstyle;
+        font-weight: $fontweight;
+        src: local($fontname), url('#{$fontpath}.ttf');
+      }
+}
+
+// normalize
+
+.body {
+    margin: 0;
+    padding: 0;
+}

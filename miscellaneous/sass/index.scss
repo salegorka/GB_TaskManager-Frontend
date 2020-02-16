@@ -1,0 +1,28 @@
+// Основные настройки, цвета и размеры макета
+@import 'settings';
+
+// Подключение шрифтов
+@include addFontMixin('Raleway Black', normal, 900, '../fonts/Raleway-Black');
+@include addFontMixin('Raleway Black Italic', italic, 900, '../fonts/Raleway-BlackItalic');
+@include addFontMixin('Raleway Bold', normal, 700, '../fonts/Raleway-Bold');
+@include addFontMixin('Raleway Bold Italic', italic, 700, '../fonts/Raleway-BoldItalic');
+@include addFontMixin('Raleway Extra-Bold', normal, 800, '../fonts/Raleway-ExtraBold');
+@include addFontMixin('Raleway Extra-Bold Italic', italic, 800, '../fonts/Raleway-ExtraBoldItalic');
+@include addFontMixin('Raleway Extra-Light', normal, 200, '../fonts/Raleway-ExtraLight');
+@include addFontMixin('Raleway Extra-Light Italic', italic, 200, '../fonts/Raleway-ExtraLightItalic');
+@include addFontMixin('Raleway Regular Italic', italic, 400, '../fonts/Raleway-Italic');
+@include addFontMixin('Raleway Regular', normal, 400, '../fonts/Raleway-Regular');
+@include addFontMixin('Raleway Light', normal, 300, '../fonts/Raleway-Light');
+@include addFontMixin('Raleway Light Italic', italic, 300, '../fonts/Raleway-LightItalic');
+@include addFontMixin('Raleway Medium', normal, 500, '../fonts/Raleway-Medium');
+@include addFontMixin('Raleway Medium Italic', italic, 500, '../fonts/Raleway-MediumItalic');
+@include addFontMixin('Raleway Semi-Bold', normal, 600, '../fonts/Raleway-SemiBold');
+@include addFontMixin('Raleway Semi-Bold Italic', italic, 600, '../fonts/Raleway-SemiBoldItalic');
+@include addFontMixin('Raleway Thin', normal, 100, '../fonts/Raleway-Thin');
+@include addFontMixin('Raleway Thin Italic', italic, 100, '../fonts/Raleway-ThinItalic');
+
+// Компоненты шаблона
+@import 'components/header';
+@import 'components/home';
+@import 'components/tasks';
+@import 'components/archive';

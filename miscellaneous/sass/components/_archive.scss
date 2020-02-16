@@ -1,0 +1,25 @@
+.archive {
+    display: flex;
+    justify-content: space-between;
+    padding: 45px 113px 0px 113px;
+    width: 100%;
+    box-sizing: border-box;
+    .archive-controls {
+        width: 263px;
+        padding-top: 38px;
+    }
+    .archive-main {
+        width: 554px;
+        display: flex;
+        flex-direction: column;
+        .archive-main-header {
+            font: 700 30px/30px "Raleway Bold";
+        }
+    }
+    .archive-view {
+        width: 263px;
+        .archive-view-header {
+            font: 700 30px/30px "Raleway Bold";
+        }
+    }
+}
