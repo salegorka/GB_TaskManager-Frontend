@@ -1,15 +1,18 @@
 .home {
     display: flex;
     justify-content: space-between;
-    padding: 45px 113px 0px 113px;
+    flex-wrap: wrap;
+    padding: 45px (($padding-site/$width) * 100%) 0px (($padding-site/$width) * 100%);
     width: 100%;
     box-sizing: border-box;
     .home-section {
         display: flex;
         flex-direction: column;
-        width: 263px;
+        min-width: (($section-width / $width) * 100%);
+        margin: 0 5px;
         .home-section-header {
             font: 700 30px/30px "Raleway Bold";
+            color: #313131;
             margin: 0 0 9px 0;
             padding: 0;
         }

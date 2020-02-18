@@ -1,11 +1,13 @@
 // Размеры макета
 $width: 1170px;
-$margin: 15px;  
+$margin: 15px;
+$padding-site: 113px;
+$section-width: 267px;  
 
 // Цвета
 $color-blue: #4374b7;
 $color-blue-hover: #2d5b9a;
-
+$color-orange: #ff9800; 
 $color-red: #d13814;
 
 $color-green: #15aa2d;
@@ -29,3 +31,4 @@ $background: #f9f9f9;
     margin: 0;
     padding: 0;
 }
+
