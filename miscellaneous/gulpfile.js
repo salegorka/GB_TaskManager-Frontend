@@ -6,6 +6,7 @@ const prefixer = require('gulp-autoprefixer');
 const cleanCSS = require('gulp-clean-css');
 const concat = require('gulp-concat');
 const del = require('del');
+const browserSync = require('browser-sync');
 
 // Определяем пути
 const path = {
@@ -16,6 +17,16 @@ const path = {
         root: 'css/',
     }
 };
+
+//Автоматическое обновление страницы в браузере при изменениях
+gulp.task('browser-sync', function() {
+    browserSync({
+        server: {
+            baseDir: './'
+        },
+        notify: false
+    });
+});
 
 // Удаление старой версии сборки
 gulp.task('kill', function() {
@@ -32,6 +43,7 @@ gulp.task('css', function() {
         .pipe(concat('style.min.css'))
         .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest(path.build.root))
+        .pipe(browserSync.reload({stream: true}))
 });
 
 // Наблюдатель за изменениями файлов
@@ -40,5 +52,5 @@ gulp.task('watch', function() {
 });
 
 // Общая сборка
-gulp.task('dev', gulp.series('kill', 'css', 'watch'));
+gulp.task('dev', gulp.series('kill', 'css', 'browser-sync', 'watch'));
 gulp.task('build', gulp.series('kill', 'css'));
