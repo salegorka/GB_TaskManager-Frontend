@@ -1,0 +1,13 @@
+.tasks-list {
+    display: flex;
+    flex-direction: column;
+    width: $section-width;
+    margin: 0 $margin;
+
+    .tasks-list__header {
+        font: 700 30px/30px "Raleway Bold";
+        color: #313131;
+        margin: 0 0 9px 0;
+        padding: 0;
+    }
+}
