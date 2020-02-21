@@ -52,5 +52,5 @@ gulp.task('watch', function() {
 });
 
 // Общая сборка
-gulp.task('dev', gulp.series('kill', 'css', 'browser-sync', 'watch'));
+gulp.task('dev', gulp.series('kill', 'css', gulp.parallel('browser-sync', 'watch')));
 gulp.task('build', gulp.series('kill', 'css'));

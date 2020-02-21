@@ -1,13 +1,16 @@
 .tasks {
     display: flex;
     justify-content: space-between;
-    padding: 45px 113px 0px 113px;
+    margin: 45px auto;
     width: 100%;
+    max-width: $width;
     box-sizing: border-box;
+    
     .tasks-section {
         display: flex;
         flex-direction: column;
         width: 263px;
+
         .tasks-section-header {
             font: 700 30px/30px "Raleway Bold";
             color: #313131;
