@@ -14,10 +14,19 @@ $color-green: #15aa2d;
 
 $background: #f9f9f9;
 
+*::selection {
+    background-color: #E3F2FD;
+}
 
-// normalize
+// Grid
+$content-width: 1200px;
+$column-count: 12;
+$column-spase: 15px;
+$column-width: ($content-width / $column-count) - ($column-spase * 2); // 70px
 
-.body {
-    margin: 0;
-    padding: 0;
+@for $i from 1 through $column-count {
+    .col-#{$i} {
+        width: ($column-width * $i) + (($i - 1) * ($column-spase * 2));
+        margin: 0 $column-spase;
+    }
 }

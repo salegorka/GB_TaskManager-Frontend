@@ -6,22 +6,22 @@ export default class Landing extends Component {
     render() {
         return (
             <>
-                <h1>Landing</h1>
-                <Link to="/auth">Авторизация</Link>
-                <br/>
-                <Link to="/reg">Регистрация</Link>
-                <br/>
-                <br/>
-                <Link to="/verify">Страница подтверждения регистрации</Link>
-                <br/>
-                <br/>
-                <Link to="/dashboard">Страница Home</Link>
-                <br/>
-                <Link to="/dashboard/tasks">Страница Tasks</Link>
-                <br/>
-                <Link to="/dashboard/new">Страница Добавления задачи</Link>
-                <br/>
-                <Link to="/dashboard/archive">Страница Archive</Link>
+                <div className="first_section">
+                    <div className="wrapper">
+                        <div className="col-8">
+                            <h2>TaskUp</h2>
+                            <h1>Управлять задачами легче лёгкого</h1>
+                            <p>Простой и лаконичный менеджер ваших задач</p>
+                            <nav>
+                                <Link to="/auth" className="signin">Войти</Link>
+                                <Link to="/reg" className="signout">Зарегистрироваться</Link>
+                            </nav>
+                        </div>
+                        <div className="col-4 first_section-image">
+                            <img src="./img/notebook.png" alt="notebook"/>
+                        </div>
+                    </div>
+                </div>
             </>
         )
     }
