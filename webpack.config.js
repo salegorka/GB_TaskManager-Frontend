@@ -6,7 +6,7 @@ module.exports = {
     entry: './src/index.jsx',
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: 'js/main.js'
+        filename: 'js/main.[hash].js'
     },
     mode: 'development',
     devServer: {
@@ -45,12 +45,18 @@ module.exports = {
                 'css-loader',
                 'sass-loader'
               ]
-            }, 
+            },
+            {
+              test: /\.(png|svg|jpg|gif)$/,
+              use: [
+                'file-loader',
+              ]
+            }
         ]
     },
     plugins: [
         new MiniCssExtractPlugin({
-          filename: 'css/style.css',
+          filename: 'css/style.[hash].css',
         }),
         new HtmlWebpackPlugin({  
           filename: 'index.html',
