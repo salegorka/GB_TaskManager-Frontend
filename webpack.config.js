@@ -6,7 +6,7 @@ module.exports = {
     entry: './src/index.jsx',
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: 'js/main.[hash].js'
+        filename: 'js/main.js'
     },
     mode: 'development',
     devServer: {
@@ -56,7 +56,7 @@ module.exports = {
     },
     plugins: [
         new MiniCssExtractPlugin({
-          filename: 'css/style.[hash].css',
+          filename: 'css/style.css',
         }),
         new HtmlWebpackPlugin({  
           filename: 'index.html',
