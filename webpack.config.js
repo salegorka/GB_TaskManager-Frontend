@@ -8,11 +8,18 @@ module.exports = {
         path: path.resolve(__dirname, 'dist'),
         filename: 'js/main.js'
     },
+    resolve: {
+      alias: {
+        components: path.resolve(__dirname, 'src/components/'),
+        pages: path.resolve(__dirname, 'src/pages/')
+      },
+    },
     mode: 'development',
     devServer: {
         contentBase: './dist',
         port: 3000,
-        hot: true
+        hot: true,
+        historyApiFallback: true,
     },
     module: {
         rules: [

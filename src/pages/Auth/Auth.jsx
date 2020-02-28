@@ -13,7 +13,7 @@ export default class Auth extends Component {
                             <h2>Sign in</h2>
                             <input type="text" placeholder="Email" className="autorization-email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]$"></input>
                             <input type="text" placeholder="Password" className="autorization-password" pattern="[A-Za-zА-Яа-яЁё0-9]"></input>
-                            <button value="Sign up" className="autorization-button">Sign in</button>
+                            <button value="Sign up" className="autorization-button"><Link to="/dashboard/tasks">Sign in</Link></button>
                         </div>
                     </div>
                 </div>

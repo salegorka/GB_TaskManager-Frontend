@@ -1,0 +1,9 @@
+// Размеры макета
+$width: 1180px;
+$margin: 15px;
+
+.tasks-list {
+    display: block;
+    width: $width/4-($margin*2);
+    margin: 0 $margin;
+}
