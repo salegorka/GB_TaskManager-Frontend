@@ -5,14 +5,24 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 module.exports = {
     entry: './src/index.jsx',
     output: {
+        publicPath: 'http://localhost:3000/',
         path: path.resolve(__dirname, 'dist'),
-        filename: 'js/main.[hash].js'
+        filename: 'js/main.js'
+    },
+    resolve: {
+      alias: {
+        components: path.resolve(__dirname, 'src', 'components'),
+        pages: path.resolve(__dirname, 'src', 'pages'),
+        middleware: path.resolve(__dirname, 'src', 'middleware'),
+        reducers: path.resolve(__dirname, 'src', 'reducers')
+      },
     },
     mode: 'development',
     devServer: {
         contentBase: './dist',
         port: 3000,
-        hot: true
+        hot: true,
+        historyApiFallback: true,
     },
     module: {
         rules: [
@@ -56,7 +66,7 @@ module.exports = {
     },
     plugins: [
         new MiniCssExtractPlugin({
-          filename: 'css/style.[hash].css',
+          filename: 'css/style.css',
         }),
         new HtmlWebpackPlugin({  
           filename: 'index.html',
