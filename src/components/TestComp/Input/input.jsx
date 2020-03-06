@@ -1,13 +1,20 @@
 import React from 'react';
-import '../Input/input.scss';
-//import classes from './input.css';
+//import '../Input/input.scss';
+import classes from '../Input/input.scss';
 
+function isInvalid({valid, touched, shouldValidate}) {
+    return !valid && shouldValidate && touched
+}
+ 
 
     const Input = props => {
         const inputType = props.type || 'text'
-        //const cls = [classes.Input]
+        const cls = [classes.Input]
         const htmlFor = `${inputType}-${Math.random()}`
 
+        if (isInvalid(props)) {
+            cls.push(classes.invalid)
+        }
     
         return (
             <div className="input-field">
@@ -20,7 +27,11 @@ import '../Input/input.scss';
                 placeholder={props.label}
                 />
     
-                <span>{props.errorMessage}</span>
+                {
+                    isInvalid(props)
+                        ? <span>{props.errorMessage || "Введите верное значение"}</span>
+                        : null
+                }            
             </div>
         )
     }
@@ -35,10 +46,6 @@ import '../Input/input.scss';
 
 
 /* 
-function isInvalid({valid, touched, shouldValidate}) {
-    return !valid && shouldValidate && touched
-}
-
 state = {
     formControls: {
         email: {
