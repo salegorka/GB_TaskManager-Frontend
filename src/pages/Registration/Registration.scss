@@ -71,7 +71,9 @@
                 text-decoration: none;
                 margin: 0 30px 0 0;
             }
+            
         }
+
 
         .registration-button {
             margin: 0 auto 40px auto;
@@ -85,6 +87,20 @@
             font-size: 24px;
             line-height: 28px;
             font-weight: 700;
+        }
+
+        .registration-button:focus {
+            outline: none;
+        }
+        
+        .registration-button:active {
+            box-shadow: inset 2px 2px 1px rgba(0, 0, 0, .3);
+        }
+        
+        .registration-button:disabled {
+            background: #ccc;
+            color: #000;
+            cursor: not-allowed;
         }
     }
 } 

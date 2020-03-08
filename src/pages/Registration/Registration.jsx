@@ -2,16 +2,35 @@ import './Registration.scss';
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 import Input from '../../components/TestComp/Input/input.jsx'
+import Button from '../../components/TestComp/Button/button.jsx'
 
 function validateEmail(email) {
     const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(String(email).toLowerCase());
 }
 
+function validatePassword(Password) {
+    const pe = /[A-Za-zА-Яа-яЁё0-9]/;
+    return pe.test(String(Password).toLowerCase());
+}
+
 export default class Registration extends Component {
 
     state = {
+        isFormValid: false,
         formControls: {
+            name: {
+                value: '',
+                type: 'name',
+                label: 'Name',
+                errorMessage: 'Введите корректное имя',
+                valid: false,
+                touched: false,
+                validation: {
+                    reqired: true,
+                    minLength: 2
+                }
+            },
             email: {
                 value: '',
                 type: 'email',
@@ -33,7 +52,8 @@ export default class Registration extends Component {
                 touched: false,
                 validation: {
                     reqired: true,
-                    minLength: 6
+                    minLength: 8,
+                    password: true
                 }
             }
         }
@@ -58,6 +78,10 @@ export default class Registration extends Component {
             isValid = value.length >= validation.minLength && isValid
         }
 
+        if (validation.password) {
+            isValid = validatePassword(value) && isValid
+        }
+
         return isValid
     }
     
@@ -72,9 +96,15 @@ export default class Registration extends Component {
         control.valid = this.validateControl(control.value, control.validation)
 
         formControls[controlName] = control
+
+        let isFormValid = true
+
+        Object.keys(formControls).forEach(name => {
+            isFormValid = formControls[name].valid && isFormValid
+        })
         
         this.setState({
-            formControls
+            formControls, isFormValid
         })
     }
 
@@ -110,7 +140,21 @@ export default class Registration extends Component {
                         <div className="registration-field">
                             <h2>Sign up</h2>
                             { this.renderInputs() }
-                            <button value="Sign up" className="registration-button">Sign up</button>
+                            <div class="registration-social">
+                                <a href="#">
+                                    <img src="../../../miscellaneous/img/facebook-icon.png" alt=""></img>
+                                </a>
+                                <a href="#">
+                                    <img src="../../../miscellaneous/img/google-icon.png" alt=""></img>
+                                </a>
+                                <a href="#">
+                                    <img src="../../../miscellaneous/img/telegram-icon.png" alt=""></img>
+                                </a>
+                                <a href="#">
+                                    <img src="../../../miscellaneous/img/vkontakte-icon.png" alt=""></img>
+                                </a>
+                            </div>
+                            <Button disabled={!this.state.isFormValid}>Sign up</Button>
                         </div>
                     </div>
                 </div>
